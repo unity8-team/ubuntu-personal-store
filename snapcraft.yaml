@@ -27,21 +27,15 @@ apps:
 parts:
   ubuntu-personal-store-qml:
     plugin: dump
-    source: https://github.com/snapcore/snapweb
-    source-type: git
+    source: .
     stage-packages:
       - qmlscene
       - qml-module-qtquick2
       - qml-module-qtquick-controls
       - qml-module-ubuntu-web
     after: [desktop-qt5]
-    organize:
-      ubuntu-personal-store/ubuntu-personal-store.qml: ubuntu-personal-store.qml
-      ubuntu-personal-store/pkg: pkg
-      ubuntu-personal-store/setup: setup
     stage:
       - ubuntu-personal-store.qml
-      - pkg/*
       - setup/*
       - usr/*
       - lib/*
@@ -49,10 +43,9 @@ parts:
 
   launcher:
     plugin: dump
-    source: https://github.com/snapcore/snapweb
-    source-type: git
+    source: .
     organize:
-      ubuntu-personal-store/ubuntu-personal-store.launcher: bin/ubuntu-personal-store.launcher
+      ubuntu-personal-store.launcher: bin/ubuntu-personal-store.launcher
     stage:
        - bin/ubuntu-personal-store.launcher
 
