@@ -1,0 +1,8 @@
+sudo: required
+dist: trusty
+
+services: docker
+
+script:
+  - docker run -v ${PWD}:/build sh -c 'cd /build && snapcraft'
+
