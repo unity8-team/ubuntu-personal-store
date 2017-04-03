@@ -6,7 +6,7 @@ type: app
 apps:
 
 grade: devel
-confinement: strict
+confinement: devmode
 
 apps:
   snapweb:
@@ -29,6 +29,7 @@ parts:
     plugin: dump
     source: .
     stage-packages:
+      - gksu
       - qmlscene
       - qml-module-qtquick2
       - qml-module-qtquick-controls
@@ -40,6 +41,7 @@ parts:
       - usr/*
       - lib/*
       - etc/*
+      - bin/*
 
   launcher:
     plugin: dump
