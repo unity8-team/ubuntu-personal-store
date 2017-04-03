@@ -59,7 +59,7 @@ parts:
 
   snapweb-ui:
     plugin: gulp
-    node-engine: 4.2.6
+    node-engine: 4.7.2
     gulp-tasks: ['install']
     source: https://github.com/snapcore/snapweb
     source-type: git
