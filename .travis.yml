@@ -11,4 +11,7 @@ install:
   - docker build -t ups .
 script:
   - docker run -v ${PWD}:/build ups sh -c 'cd /build && snapcraft'
+  - sudo snap install ./ubuntu-personal-store*.snap --dangerous
+  - snap interfaces
+  - snap list
 
