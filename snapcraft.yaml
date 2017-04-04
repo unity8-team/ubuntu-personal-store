@@ -37,6 +37,7 @@ parts:
     after: [desktop-qt5]
     stage:
       - ubuntu-personal-store.qml
+      - authenticate
       - setup/*
       - usr/*
       - lib/*
