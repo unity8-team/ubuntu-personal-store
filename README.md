@@ -22,7 +22,7 @@ Once you have a snap built locally, you can test it on your system by doing:
 
 The --dangerous flag is necessary for installing locally built snaps, which
 have not been signed by the store.
-The --devmode is necessary for authentication with gksu. We should be able to remove this option 
+The --devmode flag is necessary for authentication with gksu. We should be able to remove this option 
 after we have a working PAM interface in snapd.
 
 # Using
