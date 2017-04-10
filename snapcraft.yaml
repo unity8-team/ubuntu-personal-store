@@ -6,7 +6,7 @@ type: app
 apps:
 
 grade: devel
-confinement: strict
+confinement: devmode
 
 apps:
   snapweb:
@@ -27,32 +27,28 @@ apps:
 parts:
   ubuntu-personal-store-qml:
     plugin: dump
-    source: https://github.com/snapcore/snapweb
-    source-type: git
+    source: .
     stage-packages:
+      - gksu
       - qmlscene
       - qml-module-qtquick2
       - qml-module-qtquick-controls
       - qml-module-ubuntu-web
     after: [desktop-qt5]
-    organize:
-      ubuntu-personal-store/ubuntu-personal-store.qml: ubuntu-personal-store.qml
-      ubuntu-personal-store/pkg: pkg
-      ubuntu-personal-store/setup: setup
     stage:
       - ubuntu-personal-store.qml
-      - pkg/*
+      - authenticate
       - setup/*
       - usr/*
       - lib/*
       - etc/*
+      - bin/*
 
   launcher:
     plugin: dump
-    source: https://github.com/snapcore/snapweb
-    source-type: git
+    source: .
     organize:
-      ubuntu-personal-store/ubuntu-personal-store.launcher: bin/ubuntu-personal-store.launcher
+      ubuntu-personal-store.launcher: bin/ubuntu-personal-store.launcher
     stage:
        - bin/ubuntu-personal-store.launcher
 
@@ -66,7 +62,7 @@ parts:
 
   snapweb-ui:
     plugin: gulp
-    node-engine: 4.2.6
+    node-engine: 4.7.2
     gulp-tasks: ['install']
     source: https://github.com/snapcore/snapweb
     source-type: git

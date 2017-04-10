@@ -1,0 +1,10 @@
+sudo: required
+dist: trusty
+
+services: docker
+
+install:
+  - docker build -t ups .
+script:
+  - docker run -v ${PWD}:/build ups sh -c 'cd /build && snapcraft'
+
