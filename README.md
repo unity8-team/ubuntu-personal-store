@@ -18,7 +18,7 @@ A new ubuntu-personal-store_<version>_<arch>.snap will be created.
 
 Once you have a snap built locally, you can test it on your system by doing:
 
-     snap install ubuntu-personal-store_<version>_<arch>.snap --dangerous --devmode
+     snap install ubuntu-personal-store_<version>_<arch>.snap --devmode
 
 The --dangerous flag is necessary for installing locally built snaps, which
 have not been signed by the store.
